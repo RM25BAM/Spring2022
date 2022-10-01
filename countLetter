@@ -1,4 +1,4 @@
-(10 points). Write a function named randArray that takes a single integer argument, n, and returns a dynamically allocated array of n random integers. Test your function in the main function.
+Write a function named countLetter that will take a string and return a count of each letter in the string. For example, "I live in Liverpool” contains 2 e's, 4 i's, 3 l's, 2 o’s, 2 v’s, and one each of r, p, and n. Your function should take a single string argument and return a dynamically allocated array of 26 integers representing the count of each of the letters a . . z respectively. Your function should not be case sensitive, i.e., count 'A' and 'a' as the occurrence of the letter a. Do not count non-letter characters (i.e., spaces, punctuation, digits, etc.). Test your function by calling it in the main function and by asking the user to enter a string as an input. Print out the counter of each letter which is stored in the returned array. Do not list letters that do not occur at least once.
 #include <iostream> 
 #include <time.h> 
 using namespace std;
