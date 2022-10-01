@@ -1,0 +1,26 @@
+int * countLetter(string ); 
+int main( ){
+string input;
+cout<<"Hello!!! Please input any phrase you wish to utilized: "<<endl; getline(cin,input);
+int * counter= countLetter(input);
+for(int i=0;i<26;i++){
+if(counter[i]!=0){
+cout<<(char)(i+97)<<" "<<counter[i]<<endl;
+    } 
+}
+delete [] counter;
+cout<<"Thank you so much!!"<<endl; return 0;
+}
+int * countLetter(string input){
+int * counter=new int[26]; for(int i=0;i<26;i++ ){
+counter[i]=0;
+}
+for(char c:input){
+if(65<=c&&90>=c){ c+=32;
+} 
+if(97<=c&&122>=c){
+counter[(int)c-97]++; 
+}
+}
+return counter; 
+}
