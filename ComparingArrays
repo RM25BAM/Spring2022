@@ -1,0 +1,29 @@
+ (20 points). Write a function named copyArray that takes two parameters: integer pointer ptr and integer value n, the function must dynamically allocate and return a new array of size equal to n, and the content of the allocated array matches the content of the passed array. Test your function in the main function.
+
+int* copyArray(int *arr,int n);
+int main() {
+int n,array[10],*arr;
+cout<<"Welcome to the Copy Array generato.r"<<endl;
+cout<<"Please enter number of elements in the array:"<<endl;
+cin>>n;
+cout<<"Please enter now the array elements:"<<endl;
+for(int i=0; i<n; i++)
+cin>>*(array+i);
+arr = array;
+int *Arr = copyArray(arr,n);
+for(int i=0; i<n; i++)
+if(*(Arr+i)!= *(arr+i)){
+cout<<"The elements are not same."<<endl;
+exit;
+}
+else{
+cout<<"The array elements are same."<<endl;
+}
+cout<<"Thank you so much !!! Have a good day!!!"<<endl;
+return 0;
+}
+int* copyArray(int *ptr,int n){
+int *Arr = new int[n];
+ Arr=ptr;
+return Arr;
+}
