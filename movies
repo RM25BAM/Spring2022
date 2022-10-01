@@ -1,0 +1,40 @@
+#include <iostream> using namespace std; class Movie{
+private:
+string name; string MPAA; int rating[5];
+public: Movie(string,string); void setname(string); void setMPAA(string);
+string getname(); string getMPAA(); void addRatings(int ); double getAverage();
+};
+Movie :: Movie(string name, string MPAA){ this->name=name; this->MPAA=MPAA;
+for(int i=0;i<5;i++){
+rating[i]=0; }
+}
+void Movie:: setname(string a){
+name=a; }
+void Movie :: setMPAA(string b){ MPAA=b;
+}
+string Movie :: getname(){
+return name;
+}
+string Movie :: getMPAA(){
+return MPAA; }
+void Movie :: addRatings(int num){ if(num>=1&&num<=5){
+rating[num-1]++; }
+else{
+cout<<"Invalid input...Try again"<<endl;
+} }
+double Movie :: getAverage(){ double sum=0,count=0; for(int i=0;i<5;i++){
+sum+=rating[i]*(i+1);
+count+=rating[i]; }
+if(count==0){ return 0;
+}
+else{
+return sum/count; }
+}
+int main(){
+Movie obj("Enchanto","PG");
+cout<<"The movie name:"<<obj.getname()<<endl;
+cout<<"The MPAA:"<<obj.getMPAA()<<endl; obj.addRatings(5);
+obj.addRatings(4);
+obj.addRatings(3);
+cout<<"The average MPAA ratings:"<<obj.getAverage()<<endl; return 0;
+}
