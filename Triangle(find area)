@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+using namespace std;
+char redo(char); class Triangle{ private:
+double base; double height; string name;
+public:
+Triangle(int){};
+Triangle(double a=0,double b=0,string s=" "){
+base=a; height=b; name=s;
+};
+double getbase(); double getheight(); string getname(); double getArea();
+void setbase(double); void setheight(double); void setname(string);
+};
+void printTriangle(Triangle & obj){ cout<<"Base:"<<obj.getbase()<<endl; cout<<"Height:"<<obj.getheight()<<endl; cout<<"Name:"<<obj.getname()<<endl; cout<<"Area:"<<obj.getArea()<<endl;
+}
+int main(){
+int n;
+double num1,num2;
+string fname;
+cout<<"Please insert the base and height of the object: "<<endl; cin>>num1>>num2;
+cout<<"Please insert the name of the object: "<<endl;
+getline(std:: cin,fname);
+Triangle * obj1, * Default;
+obj1 = new Triangle(num1,num2,fname);
+Default = new Triangle;
+printTriangle(* obj1);
+cout<<"Would you like to rerun it again(insert any value that is number):"<<endl; cin>>n;
+redo(n);
+Delete obj1; Delete Default; }
+void Triangle :: setbase(double a ){ base=a;
+}
+void Triangle :: setheight(double b){
+height=b;
+}
+void Triangle :: setname(string s){
+name=s; }
+double Triangle :: getbase(){ return base;
+}
+double Triangle :: getheight(){
+return height; }
+string Triangle :: getname(){ return name;
+}
+double Triangle :: getArea(){
+return (base*height)/2; }
+char redo(char n){ char G;
+cout<< " would you like to redo: "<<endl; cin>>G;
+switch(G)
+{
+case 'y' :case 'Y': return main();
+case 'n' : case 'N': return 0;
+default: break;
+}
+return 0; 
+}
