@@ -1,3 +1,7 @@
+(10 points). Write a function named randArray that takes a single integer argument, n, and returns a dynamically allocated array of n random integers. Test your function in the main function.
+#include <iostream> 
+#include <time.h> 
+using namespace std;
 int * countLetter(string ); 
 int main( ){
 string input;
